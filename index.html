@@ -12,13 +12,77 @@
   />
 </head>
 <body 
-style="background-image: url('foto/WIN_20250705_22_16_49_Pro.jpg'); background-size:cover; background-position:center; background-repeat:no-repeat; min-height:100vh;"
+style="background-image: url('foto/WIN_20250705_22_16_49_Pro.jpg'); background-size:cover; background-position:center; background-repeat:no-repeat; min-height:100vh; height:100vh; background-color:#f3f4f6;"
 class="flex justify-center min-h-screen items-center"
 >
-<div class="bg-white border border-4 shadow-lg border-gray-300 shadow-pink-300 rounded-xl text-center px-10 py-8">
+<audio src="LAGU/The 1975 - About You (Official) (320).mp3" autoplay loop hidden></audio>
+<div class="bg-white border border-4 shadow-lg border-gray-300 shadow-pink-300 rounded-xl text-center px-10 py-8 animate__animated animate__backInDown m-8 w-80" id="kartu"
+>
   <h1 class="text-3xl">HAPPY BIRTHDAY</h1>
-  <h1 class="text-4xl text-pink-500 font-bold">Syahfinaa</h1>
-  <button class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-800 transition ease-in w-full">Press In Here Cantikk</button>
+  <h1 class="text-4xl text-pink-500 font-bold animate__animated animate__pulse animate__infinite">Syahfinaa</h1>
+  <button class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-800 transition ease-in w-full animate__animated animate__delay-1s animate__tada" onclick="ubahkartu()"
+  >
+  Click In Here Cantikk
+  </button>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+<script>
+  const count = 200,
+  defaults = {
+    origin: { y: 0.7 },
+  };
+
+function fire(particleRatio, opts) {
+  confetti(
+    Object.assign({}, defaults, opts, {
+      particleCount: Math.floor(count * particleRatio),
+    })
+  );
+}
+
+fire(0.25, {
+  spread: 26,
+  startVelocity: 55,
+});
+
+fire(0.2, {
+  spread: 60,
+});
+
+fire(0.35, {
+  spread: 100,
+  decay: 0.91,
+  scalar: 0.8,
+});
+
+fire(0.1, {
+  spread: 120,
+  startVelocity: 25,
+  decay: 0.92,
+  scalar: 1.2,
+});
+
+fire(0.1, {
+  spread: 120,
+  startVelocity: 45,
+});
+letkartu = document.getElementById("kartu");
+function ubahkartu() {
+kartu.innerHTML = `<h1 class="font-semibold text-wrap animate__animated animate__fadeInUp">
+  Selamat Ulang Tahun Syahfinaa, panjang umur, sehat selalu, bahagia selalu, dan sukses selalu. Dilancarkan semua impianmu. akuu selalu ada untukmuu🎉🎂❤️
+</h1>
+<h2 class="mt-3 animate__animated animate__fadeIn animate__delay-1s">- from: Firmansyah -
+  </h2>
+ <button class="p-2 bg-slate-600 text-white rounded mt-5 hover:bg-slate-800 transition ease-in w-full animate__animated animate__delay-1s animate__tada" onclick="refresh()"
+  >
+  Thank Youu
+  </button>
+  `;
+}
+function refresh() {
+  location.reload();
+}
+</script>
 </body>
 </html>
